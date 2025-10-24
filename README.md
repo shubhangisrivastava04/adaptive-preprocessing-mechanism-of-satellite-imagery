@@ -25,22 +25,36 @@ Together, these modules form an **intelligent preprocessing + segmentation pipel
 ---
 
 ## 🧩 Project Structure
-
 Adaptive-Preprocessing-Vegetation/
+
 │
+
 ├── app.py # Streamlit app for demo visualization
+
 ├── requirements.txt # List of dependencies to install
+
 │
+
 ├── processing/
-│ ├── preprocessing_utils.py # Functions for cloud masking, normalization, CLAHE, etc.
-│ ├── adaptive_pipeline.py # Pipeline that applies preprocessing steps adaptively
-│ ├── model_preprocess_cnn.pth # Trained shallow CNN for preprocessing prediction
-│ ├── model_unetpp.pth # Trained U-Net++ segmentation model
+
+│ ├── preprocessing\_utils.py # Functions for cloud masking, normalization, CLAHE, etc.
+
+│ ├── adaptive\_pipeline.py # Pipeline that applies preprocessing steps adaptively
+
+│ ├── model\_preprocess\_cnn.pth # Trained shallow CNN for preprocessing prediction
+
+│ ├── model\_unetpp.pth # Trained U-Net++ segmentation model
+
 │
+
 ├── assets/
-│ ├── sample_images/ # Example Sentinel-2 input images
-│ ├── output_maps/ # Segmented output maps
+
+│ ├── sample\_images/ # Example Sentinel-2 input images
+
+│ ├── output\_maps/ # Segmented output maps
+
 │
+
 └── README.md # Project documentation (this file)
 
 ---
@@ -49,7 +63,7 @@ Adaptive-Preprocessing-Vegetation/
 
 ### 1. Clone the Repository
 ```
-git clone https://github.com/<your-username>/Adaptive-Preprocessing-Vegetation.git
+git clone https://github.com/shubhangisrivastava04/adaptive-preprocessing-mechanism-of-satellite-imagery.git
 cd Adaptive-Preprocessing-Vegetation
 ```
 
@@ -68,13 +82,11 @@ streamlit run app.py
 
 The Streamlit GUI will allow you to:
 
-Upload or select a sample Sentinel-2 image
+1. Upload or select a sample Sentinel-2 image
 
-View preprocessing predictions made by the CNN
+2. View preprocessing predictions made by the CNN
 
-See the adaptive preprocessing in action
-
-Generate pixel-wise vegetation segmentation using U-Net++
+3. Generate pixel-wise vegetation segmentation using U-Net++
 
 ---
 
@@ -84,8 +96,8 @@ Generate pixel-wise vegetation segmentation using U-Net++
 Contains:
 
 #### 🧠 Trained Models
-- `model_preprocess_cnn.pth` – predicts required preprocessing steps  
-- `model_unetpp.pth` – performs segmentation  
+- `adaptive_model.keras` – predicts required preprocessing steps  
+- `segmentation_model.keras` – performs segmentation  
 
 #### ⚙️ Preprocessing Utilities
 Implementation of:
@@ -118,7 +130,7 @@ Dynamically applies the predicted preprocessing sequence before segmentation.
 - **Frameworks:** PyTorch, Streamlit  
 - **Libraries:** NumPy, OpenCV, Matplotlib, scikit-learn  
 - **Dataset:** Sentinel-2 imagery via Google Earth Engine  
-- **Ground Truth:** Dynamic World dataset (Google & WRI)
+- **Ground Truth:** Dynamic World dataset (Google Earth Engine)
 
 ---
 

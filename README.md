@@ -25,6 +25,7 @@ Together, these modules form an **intelligent preprocessing + segmentation pipel
 ---
 
 ## 🧩 Project Structure
+```
 Adaptive-Preprocessing-Vegetation/
 
 │
@@ -37,25 +38,22 @@ Adaptive-Preprocessing-Vegetation/
 
 ├── processing/
 
-│ ├── preprocessing\_utils.py # Functions for cloud masking, normalization, CLAHE, etc.
+│ ├── preprocessing_utils.py # Functions for cloud masking, normalization, CLAHE, etc.
 
-│ ├── adaptive\_pipeline.py # Pipeline that applies preprocessing steps adaptively
+│ ├── pipeline.py # Pipeline that neatly integrates adaptie preprocessing with vegetation segmentation
 
-│ ├── model\_preprocess\_cnn.pth # Trained shallow CNN for preprocessing prediction
+│ ├── adaptive_model.keras # Trained shallow CNN for preprocessing prediction
 
-│ ├── model\_unetpp.pth # Trained U-Net++ segmentation model
-
-│
-
-├── assets/
-
-│ ├── sample\_images/ # Example Sentinel-2 input images
-
-│ ├── output\_maps/ # Segmented output maps
+│ ├── segmentation_model.keras # Trained U-Net++ segmentation model
 
 │
 
-└── README.md # Project documentation (this file)
+├── test_imgs/ # Example Sentinel-2 input images in .TIF Format
+
+│
+
+└── README.md # Project documentation
+```
 
 ---
 
@@ -64,17 +62,34 @@ Adaptive-Preprocessing-Vegetation/
 ### 1. Clone the Repository
 ```
 git clone https://github.com/shubhangisrivastava04/adaptive-preprocessing-mechanism-of-satellite-imagery.git
-cd Adaptive-Preprocessing-Vegetation
+cd adaptive-preprocessing-mechanism-of-satellite-imagery
 ```
 
-### 2. Install Dependencies
+### 2. Install Git LFS (for model files)
+If you haven't already:
+```
+git lfs install
+git lfs pull
+```
+
+### 3. Set Up a Virtual Environment (Optional but Recommended)
+```
+python -m venv venv
+# Activate the virtual environment:
+# Windows:
+venv\Scripts\activate
+# Linux/Mac:
+source venv/bin/activate
+```
+
+### 4. Install Dependencies
 Make sure you have Python 3.8+ installed.
 Then install all required packages using:
 ```
 pip install -r requirements.txt
 ```
 
-### 3. Run the Streamlit App
+### 5. Run the Streamlit App
 Once dependencies are installed, launch the interactive demo:
 ```
 streamlit run app.py

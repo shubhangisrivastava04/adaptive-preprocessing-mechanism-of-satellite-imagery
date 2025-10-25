@@ -26,7 +26,7 @@ Together, these modules form an **intelligent preprocessing + segmentation pipel
 
 ## 🧩 Project Structure
 ```
-Adaptive-Preprocessing-Vegetation/
+adaptive-preprocessing-mechanism-of-satellite-imagery/
 
 │
 

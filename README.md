@@ -48,7 +48,7 @@ adaptive-preprocessing-mechanism-of-satellite-imagery/
 
 │
 
-├── test_imgs/ # Example Sentinel-2 input images in .TIF Format
+├── testing_images.zip # Example Sentinel-2 input images in .TIF Format
 
 │
 
